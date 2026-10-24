@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Califnco Water",
+    "slug": "califnco-water",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {"package": "com.califnco.water"},
+    "splash": {"resizeMode": "contain", "backgroundColor": "#eaf6f8"}
+  }
+}

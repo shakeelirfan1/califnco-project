@@ -1,0 +1,111 @@
+{
+  "name": "Califnco Daily Instagram Product (Starter)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1,
+              "triggerAtHour": 9,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "schedule-daily",
+      "name": "Daily Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "product_name",
+              "value": "AquaPure RO+UV Water Purifier",
+              "type": "string"
+            },
+            {
+              "name": "product_description",
+              "value": "Multi-stage water purification for everyday family use.",
+              "type": "string"
+            },
+            {
+              "name": "dry_run",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "product",
+      "name": "Select Demo Product",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "content": "TODO: Connect a genuinely free AI image-generation provider and public image hosting. Do not claim fresh AI generation until verified. Keep dry_run=true while testing.",
+        "height": 180,
+        "width": 300
+      },
+      "id": "todo-image",
+      "name": "Configure AI Image + Hosting",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        440,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "content": "TODO: Add caption/hashtag generation, Meta Graph API media container creation, publish call, execution logging and error handling. Configure credentials in n8n, never in exported JSON.",
+        "height": 180,
+        "width": 330
+      },
+      "id": "todo-meta",
+      "name": "Configure Caption + Instagram API",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        440,
+        250
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Schedule": {
+      "main": [
+        [
+          {
+            "node": "Select Demo Product",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "califnco-starter-v1",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}
